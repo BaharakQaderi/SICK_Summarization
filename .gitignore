@@ -1,6 +1,6 @@
 data/__pycache__/
 data/COMET_data/
-# data/DialogSum_Data/
+data/DialogSum_Data/
 
 models/__pycache__/
 
