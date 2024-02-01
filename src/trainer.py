@@ -97,7 +97,7 @@ class DualDecoderTrainer(Seq2SeqTrainer):
 
         with self.autocast_smart_context_manager():
             loss1, loss2 = self.compute_loss(model, inputs)
-            loss2 = loss2*0.5
+            loss2 = loss2*0.5 # scale down the loss for the extra decoder which is resposible for the common sense knowledge target in SICK++
 
         if self.args.n_gpu > 1:
             loss1 = loss1.mean()  # mean() to average on multi-gpu parallel training

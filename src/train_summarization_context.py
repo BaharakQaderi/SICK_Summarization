@@ -71,7 +71,7 @@ print('######################################################################')
 
 
 # Start WANDB Log (Set Logging API)
-wandb.init(project="ICSK4AS", reinit=True, entity='icsk4as')
+wandb.init(project="ICSK4AS", reinit=True)
 if args.use_paracomet:
     cs = "para"
     if args.use_roberta:
@@ -219,7 +219,7 @@ finetune_args = Seq2SeqTrainingArguments(
     #warmup_ratio= ,
     warmup_steps= args.warm_up,
     save_total_limit=1,
-    fp16=True,
+    fp16=False,
     seed = 516,
     load_best_model_at_end=True,
     predict_with_generate=True,
